@@ -10,10 +10,10 @@ const About = () => {
             <h1 className='text-start'>About</h1>
           </div>
           <div className='container-md my-3 py-4 mx-5'>
-            <p className='text-4xl'>Ea dolore quis aute voluptate proident consectetur proident fugiat do elit proident tempor. Dolore ad fugiat ut cupidatat ipsum fugiat duis consectetur voluptate do magna sit labore. Anim nostrud amet tempor aliqua non aliquip eu enim non amet occaecat quis sunt qui. Ullamco tempor cillum anim et enim excepteur mollit adipisicing cillum.</p>
+            <p className='text-2xl'>Ea dolore quis aute voluptate proident consectetur proident fugiat do elit proident tempor. Dolore ad fugiat ut cupidatat ipsum fugiat duis consectetur voluptate do magna sit labore. Anim nostrud amet tempor aliqua non aliquip eu enim non amet occaecat quis sunt qui. Ullamco tempor cillum anim et enim excepteur mollit adipisicing cillum.</p>
           </div>
           <div className='container-sm my-3 py-4 mx-5'>
-            <p className='text-2xl'>Consequat proident non quis laboris magna amet in consequat proident. Aute occaecat aute non minim sit officia. Est dolor esse tempor nisi ut pariatur consequat ea magna. Culpa aliqua ut aliquip ad ea do velit officia eiusmod. Officia deserunt labore exercitation consequat ullamco tempor ullamco pariatur ullamco eiusmod nulla proident. Est laborum Lorem cupidatat nulla.</p>
+            <p className='text-xl'>Consequat proident non quis laboris magna amet in consequat proident. Aute occaecat aute non minim sit officia. Est dolor esse tempor nisi ut pariatur consequat ea magna. Culpa aliqua ut aliquip ad ea do velit officia eiusmod. Officia deserunt labore exercitation consequat ullamco tempor ullamco pariatur ullamco eiusmod nulla proident. Est laborum Lorem cupidatat nulla.</p>
           </div>
           <div className='product flex flex-row'>
             <img src='https://cdn.pixabay.com/photo/2015/07/01/03/13/shampoo-827141__340.jpg'/>

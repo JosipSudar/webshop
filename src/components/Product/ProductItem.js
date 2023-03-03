@@ -8,14 +8,15 @@ const ProductItem = ({data}) => {
     const router= useRouter()
   return (
     
-    <div className='text-left'>
-         <h1>{data.title}</h1>
+    <div className='m-3'>
          <div>
-            <img src={data.thumbnail}/>
+            <img className=' rounded-md' style={{height:"300px", width:"500px"}} src={data.thumbnail}/>
          </div>
-         <p>{data.description}</p>
-
-         <button onClick={()=>router.push("/products/"+ data.id)}>See product</button>
+         <div className=''>
+         <h1 className='text-xl text-left'>{data.title}</h1>
+         <p className='text-left'>${data.price}</p>
+         <button className='rounded-full text-sm left-0' style={{width:"50%"}} onClick={()=>router.push("/products/"+ data.id)}>See product</button>
+         </div>
     </div>
   )
 }

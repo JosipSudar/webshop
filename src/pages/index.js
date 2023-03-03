@@ -1,14 +1,11 @@
-import Body from '@/components/body'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
+
+import HeaderComponent from '@/components/HomeComponents/HeaderComponent'
 import React from 'react'
 
 const index = () => {
   return (
     <>
-    <Header/>
-    <Body/>
-    <Footer/>
+  <HeaderComponent/>
     </>
   )
 }

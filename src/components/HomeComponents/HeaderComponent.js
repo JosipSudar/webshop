@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Main = () => {
+const HeaderComponent = () => {
   return (
     <div className='main'>
         <div className='main-bg'>
@@ -14,4 +14,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default HeaderComponent

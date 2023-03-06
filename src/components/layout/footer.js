@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
       <div className="sm:flex sm:items-center sm:justify-between">
         <a href="" className="flex items-center mb-4 sm:mb-0">
-          <img src="https://www.pngitem.com/pimgs/m/178-1783030_online-shopping-logo-png-transparent-png.png" className="h-8 mr-3" alt="Logo" />
+          <img src="./slike/cart.png" className="h-8 mr-3" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Web-Shop</span>
         </a>
         <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">

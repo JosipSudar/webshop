@@ -1,15 +1,21 @@
-import Footer from '@/components/layout/footer'
-import Header from '@/components/layout/header'
-import React from 'react'
+import { useSelector, useDispatch } from "react-redux";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  removeFromCart,
+} from "../redux/cartslice";
+import dynamic from "next/dynamic";
 
+const MyComponent= dynamic(() => import("@/components/cart/cart"), {
+ssr: false,
+});
 const Checkout = () => {
+
   return (
-    <div>
-
-        Checkout
-
+    <div className="">
+<MyComponent/>
     </div>
-  )
-}
+  );
+};
 
-export default Checkout
+export default Checkout;

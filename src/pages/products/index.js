@@ -14,7 +14,7 @@ const Products = (props) => {
             <button className="ml-3 pl-3 left-0 rounded-full ">BUY NOW</button>
             </div>
             <div className="mb-0 pb-0">
-                <img src="https://o.remove.bg/downloads/dd966d07-c26e-4e58-b944-3330314d2a0c/phone-875488_960_720-removebg-preview.png"/>
+                <img src="./slike/man.png"/>
             </div>
        </div> 
       <div className="">

@@ -6,6 +6,7 @@
 .main-container{
   max-width: 1250px;
   margin: 0 auto;
+  min-height: 600px;
 }
 *{
   font-family:'Inter', sans-serif;
@@ -14,6 +15,7 @@
 .header{
   display: flex;
   flex-direction: row;
+  padding: 10px;
 }
 ul{
   display: flex;
@@ -21,14 +23,15 @@ ul{
   align-items: center;
   margin: auto;
   gap: 40px;
+  padding: 10px;
   list-style: none;
   font-size: larger;
   font-weight: 400;
 }
 li:hover{
   cursor: pointer;
-  text-decoration: underline;
-  color: orangered; 
+  text-decoration: none;
+  color: orangered;
 }
 /*body*/
 .main{
@@ -78,4 +81,46 @@ button{
 .products-bg{
  display: flex;
  justify-content: center;
+}
+/*cart*/
+.table {
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.table-header {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.table-header div {
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+  margin-bottom: 2rem;
+}
+.table-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.table-body > * {
+  flex: 1;
+}
+.table-image {
+  width: 100px;
+}
+.table-buttons button {
+  background-color: black;
+  color: #f1f1f1;
+  margin: 1px;
+}
+.table-buttons{
 }

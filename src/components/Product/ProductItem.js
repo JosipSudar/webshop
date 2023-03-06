@@ -1,4 +1,3 @@
-import Products from '@/pages/products'
 import { useRouter } from 'next/router'
 import React from 'react'
 

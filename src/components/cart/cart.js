@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
@@ -8,7 +9,7 @@ import {
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  const router= useRouter()
   const getTotalPrice = () => {
     return cart.reduce(
       (accumulator, item) => accumulator + item.quantity * item.price,
@@ -54,11 +55,12 @@ const Cart = () => {
             <p>$ {item.quantity * item.price}</p>
           </div>
         ))}
-        <h2>Grand Total: $ {getTotalPrice()}</h2>
+       <button className=" flex w-fit self-center" onClick={()=>router.push("/products")}>Add more products</button> 
+        <h2 className=" text-2xl m-2 text-left">Grand Total: $ {getTotalPrice()}</h2>
       </>
     )}
   </div>
   );
-};
+}; 
 
 export default Cart;

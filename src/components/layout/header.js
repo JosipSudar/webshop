@@ -12,15 +12,15 @@ const router= useRouter()
   }
   return (
     <div className='header'>
-      <img style={{height:"50px", width:"50px"}} src='./slike/cart.png'/>
+      <img className='' style={{height:"30px", width:"30px"}} src='./slike/cart.png'/>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/products">Products</a></li>
-        <li><Link href="/checkout">Cart</Link></li>
-        <li>{Object.keys(cart).length}</li>
-        <li><Link href="./login">Login/Signup</Link></li>
-        <li onClick={()=>logout()}>Logout</li>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/about">About</Link></li>
+        <li><Link href="/products">Products</Link></li>
+        {Object.keys(cart).length>0?(<li><Link href="/checkout"><img src="./slike/animatedcart.gif"/></Link></li>): (<li><Link href="/checkout"><img src="./slike/nonanimatedcart.png"/></Link></li>)}
+        {Object.keys(cart).length}
+        {localStorage.getItem("auth")? (<li onClick={()=>logout()}>Logout</li>): ""}
+        {localStorage.getItem("auth")?"":(<li><Link href="./login">Login/Signup</Link></li>)}
       </ul>
     </div>
   )

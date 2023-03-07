@@ -17,7 +17,7 @@ const a=()=>{
 const data = typeof window !== 'undefined' ? values:""
 const cartSlice = createSlice({
   name: 'cart',
-  initialState:typeof window !== 'undefined' ? a():[],
+  initialState:values,
   reducers: {
     addToCart: (state, action) => {
       const dataExists = state.find((data) => data.id === action.payload.id);

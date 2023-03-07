@@ -9,9 +9,11 @@ const AuthContainer=({children})=>{
     const [authLoading,set_auth_loading]= useState(true)
     const router= useRouter()
 useEffect(()=>{
+const auth_key= window.localStorage.getItem("auth")
 
+set_auth(auth_key)
     set_auth_loading(true)
-if(!is_authenticate && router.asPath==="/checkout"){
+if(is_authenticate != "auth" && router.asPath==="/checkout"){
     router.push("/login")
     set_auth_loading(false)
 }

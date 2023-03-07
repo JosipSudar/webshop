@@ -12,13 +12,13 @@ export default function App({ Component, pageProps }) {
   return (
    
     <Provider store={store}>
-  
+  <AuthContainer>
       <MyComponent/>
       <div className="main-container">
         <Component {...pageProps} />
       </div>
       <Footer />
-  
+      </AuthContainer>
     </Provider>
    
   );

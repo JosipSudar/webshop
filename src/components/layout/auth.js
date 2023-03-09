@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartslice";
 import { useRouter } from "next/router";
 import axios from "axios";
-const AuthContainer = ({ children }) => {
-  const [is_authenticate, set_auth] = useState(false);
+const AuthContainer = ({ children, Auth }) => {
+  const [is_authenticate, set_auth] = useState();
   const [authLoading, set_auth_loading] = useState(true);
   const router = useRouter();
   const tokenCheck = async (token) => {
@@ -20,31 +20,28 @@ const AuthContainer = ({ children }) => {
           },
         }
       );
-      if (res.status == 200) {
+      if (res.status === 200) {
         set_auth(true);
-        localStorage.setItem("loggedin", "true");
-      } else {
-        console.log(res.data);
-        set_auth(false);
-        if (router.asPath === "/checkout") {
-          router.push("/login");
-          set_auth_loading(false);
-        }
-        localStorage.setItem("loggedin", "no");
+        Auth(true);
       }
     } catch (e) {
-      console.log(e);
       set_auth(false);
-
-      localStorage.setItem("loggedin", "no");
+      Auth(false);
+      localStorage.removeItem("token");
+    }
+  };
+  const check = () => {
+    if (is_authenticate === false && router.asPath === "/checkout") {
+      router.replace("/login");
+    } else {
     }
   };
   useEffect(() => {
     const auth_key = window.localStorage.getItem("token");
     tokenCheck(auth_key);
-
     set_auth_loading(false);
-  }, [router.asPath, tokenCheck]);
+    check();
+  }, [router.asPath]);
   if (authLoading) {
     return (
       <div>

@@ -4,28 +4,29 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Login = () => {
-const [password,setPassword]= useState()
-const [username,setUser]= useState()
-const router=useRouter()
-  const log=(e)=>{
-    e.preventDefault()
-    const params={
-      username:username,
-      password:password
-    }
-    axios.post("/api/auth",params).then((res)=>{
-      if(res.data=== "auth"){
-        localStorage.setItem("auth",res.data)
-      }
-      else{
-        console.log(res.data.message)
-      }
-
-    }).catch((e)=>{
-      console.log(e)
-      
-    })
-  }
+  const [password, setPassword] = useState();
+  const [username, setUser] = useState();
+  const router = useRouter();
+  const log = (e) => {
+    e.preventDefault();
+    const params = {
+      username: username,
+      password: password,
+    };
+    axios
+      .post("http://localhost:8080/api/users/login", params)
+      .then((res) => {
+        if (res.data.token) {
+          localStorage.setItem("token", res.data.token);
+          router.push("/");
+        } else {
+          console.log(res.data);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -48,15 +49,12 @@ const router=useRouter()
                     for="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your email
+                    Username
                   </label>
                   <input
-                  onChange={(e)=>setUser(e.target.value)}
+                    onChange={(e) => setUser(e.target.value)}
                     type="username"
-              
-                
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        
                   />
                 </div>
                 <div>
@@ -67,7 +65,7 @@ const router=useRouter()
                     Password
                   </label>
                   <input
-                                    onChange={(e)=>setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     name="password"
                     id="password"
@@ -106,7 +104,6 @@ const router=useRouter()
                 <button
                   type="submit"
                   className=" text-white bg-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  onClick={()=>router.push("/")}
                 >
                   Sign in
                 </button>

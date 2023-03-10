@@ -10,16 +10,13 @@ const MyComponent = dynamic(() => import("@/components/layout/header"), {
   ssr: false,
 });
 export default function App({ Component, pageProps }) {
-  const [auth, setAuth] = useState();
   return (
     <Provider store={store}>
-      <AuthContainer Auth={setAuth}>
-        <MyComponent logedin={auth} />
-        <div className="main-container">
-          <Component {...pageProps} />
-        </div>
-        <Footer />
-      </AuthContainer>
+      <MyComponent />
+      <div className="main-container">
+        <Component {...pageProps} />
+      </div>
+      <Footer />
     </Provider>
   );
 }

@@ -1,15 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 
 import { Token } from "./token";
-export function AuthContainer() {
+export function useAuth() {
   const router = useRouter();
+  const [auth, setAuth] = useState();
+  const [user, setUserId] = useState();
   const tokenCheck = async () => {
     const token = window.localStorage.getItem("token");
     const data = await Token(token);
     if (!data) {
-      router.push("/login");
+      setAuth(false);
+    } else {
+      setAuth(true);
+
+      setUserId(data.roleId);
     }
   };
 
@@ -17,5 +23,8 @@ export function AuthContainer() {
     tokenCheck();
   }, [router]);
 
-  return null;
+  return {
+    auth: auth,
+    userId: user,
+  };
 }
